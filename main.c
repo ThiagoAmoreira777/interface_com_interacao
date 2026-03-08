@@ -21,7 +21,7 @@ void desliga_led(){
 
 void app_main(void)
 {
-    char buffer[50];    // Nosso "balde" de letras
+    char buffer[50];    // armazem
     int index = 0;      // Posição da letra atual
     
     printf("Sistema Pronto! Digite e aperte Enter.\n");
@@ -46,13 +46,13 @@ void app_main(void)
                     }
                 }
                 
-                index = 0; // Reseta o balde para a próxima palavra
+                index = 0; // Reseta o armzem para a próxima palavra
             } 
             else {
-                // Se for uma letra comum, guarda no balde e avança a posição
+                // Se for uma letra comum, guarda no armazem e avança a posição
                 if (index < sizeof(buffer) - 1) {
                     buffer[index++] = (char)c;
-                    putchar(c); // Faz o "eco" (mostra a letra que voce digitou)
+                    putchar(c); // mostra a letra que voce digitou
                 }
             }
         }
