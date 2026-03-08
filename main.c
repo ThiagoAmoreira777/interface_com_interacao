@@ -6,7 +6,7 @@
 
 #define LED_PIN GPIO_NUM_2
 
-void led (int vezes){
+void led (){
         gpio_set_direction(LED_PIN, GPIO_MODE_OUTPUT); // Configura o pino 2 como saída
         gpio_set_level(LED_PIN, 1);
         vTaskDelay(pdMS_TO_TICKS(1000)); // Aguarda 500ms      
@@ -39,7 +39,7 @@ void app_main(void)
                 if (index > 0) { // Só processa se houver algo escrito
                     if (strcmp(buffer, "oi") == 0) {
                         printf("\nOla Thiago! Comando reconhecido.\n");
-                        led(1); // Chama a função para piscar o LED
+                        led(); // Chama a função para piscar o LED
                     } else {
                         printf("\nVoce digitou: %s (Comando desconhecido)\n", buffer);
                         desliga_led(); // Desliga o LED caso o comando seja desconhecido
